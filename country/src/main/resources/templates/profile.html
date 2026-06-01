@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>My Profile</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav th:replace="~{layout :: nav}"></nav>
+<main>
+<h1>My Profile</h1>
+<p>Logged in as: <strong sec:authentication="name"></strong></p>
+<a th:href="@{/countries}" class="btn btn-secondary">Back to countries</a> |
+<form th:action="@{/logout}" method="post" style="display:inline">
+    <button type="submit" class="btn btn-secondary">Logout</button>
+</form>
+
+<h2>Countries I've visited (<span th:text="${#lists.size(visited)}"></span>)</h2>
+<ul>
+<!--    <li th:each="v : ${visited == true}">-->
+<!--        <a th:href="@{/countries/{id}(id=${v.country.id})}" th:text="${v.country.name}"></a>-->
+<!--        — <span th:text="${v.visitedAt}"></span>-->
+<!--    </li>-->
+    <li th:each="v : ${visited}">
+        <span th:text="${v['countryName']}"></span>
+        — <span th:text="${v['visitedAt']}"></span>
+    </li>
+</ul>
+<p th:if="${#lists.isEmpty(visited)}">You haven't marked any countries as visited yet.</p>
+</main>
+</body>
+</html>

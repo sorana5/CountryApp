@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Főoldal",
+    "countries": "Országok",
+    "profile": "Profil",
+    "admin": "Admin",
+    "login": "Bejelentkezés",
+    "register": "Regisztráció",
+    "logout": "Kijelentkezés",
+    "chat": "Chat"
+  },
+  "countries": {
+    "title": "Országok",
+    "search": "Keresés név szerint",
+    "filter": "Szűrés kontinens szerint",
+    "searchBtn": "Keresés",
+    "clear": "Törlés",
+    "name": "Név",
+    "continent": "Kontinens",
+    "capital": "Főváros",
+    "population": "Népesség",
+    "export": "Exportálás",
+    "previous": "Előző",
+    "next": "Következő"
+  },
+  "country": {
+    "capital": "Főváros",
+    "population": "Népesség",
+    "continent": "Kontinens",
+    "funFacts": "Érdekességek",
+    "noFunFacts": "Még nincsenek érdekességek.",
+    "addFunFact": "Érdekesség hozzáadása",
+    "submit": "Küldés",
+    "markVisited": "Megjelölés látogatottként",
+    "visited": "Meglátogattad ezt az országot!",
+    "edit": "Szerkesztés",
+    "delete": "Törlés",
+    "back": "Vissza a listához"
+  },
+  "auth": {
+    "username": "Felhasználónév",
+    "email": "E-mail",
+    "password": "Jelszó",
+    "login": "Bejelentkezés",
+    "register": "Regisztráció",
+    "noAccount": "Még nincs fiókod?",
+    "haveAccount": "Már van fiókod?"
+  },
+  "profile": {
+    "title": "Profilom",
+    "visitedTitle": "Meglátogatott országok",
+    "noVisited": "Még nem látogattál meg egyetlen országot sem."
+  },
+  "admin": {
+    "title": "Admin irányítópult",
+    "addCountry": "Új ország hozzáadása",
+    "actions": "Műveletek"
+  },
+  "chat": {
+    "title": "Élő chat",
+    "placeholder": "Írj üzenetet...",
+    "send": "Küldés"
+  },
+  "errors": {
+    "notFound": "Nem található",
+    "forbidden": "Nincs jogosultságod",
+    "invalid": "Érvénytelen bejelentkezési adatok"
+  }
+}

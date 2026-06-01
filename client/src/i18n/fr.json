@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "countries": "Pays",
+    "profile": "Profil",
+    "admin": "Admin",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "chat": "Chat"
+  },
+  "countries": {
+    "title": "Pays",
+    "search": "Rechercher par nom",
+    "filter": "Filtrer par continent",
+    "searchBtn": "Rechercher",
+    "clear": "Effacer",
+    "name": "Nom",
+    "continent": "Continent",
+    "capital": "Capitale",
+    "population": "Population",
+    "export": "Exporter",
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "country": {
+    "capital": "Capitale",
+    "population": "Population",
+    "continent": "Continent",
+    "funFacts": "Faits intéressants",
+    "noFunFacts": "Aucun fait intéressant pour le moment.",
+    "addFunFact": "Ajouter un fait intéressant",
+    "submit": "Envoyer",
+    "markVisited": "Marquer comme visité",
+    "visited": "Vous avez visité ce pays!",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "back": "Retour à la liste"
+  },
+  "auth": {
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "password": "Mot de passe",
+    "login": "Connexion",
+    "register": "Inscription",
+    "noAccount": "Pas encore de compte?",
+    "haveAccount": "Vous avez déjà un compte?"
+  },
+  "profile": {
+    "title": "Mon profil",
+    "visitedTitle": "Pays visités",
+    "noVisited": "Vous n'avez encore visité aucun pays."
+  },
+  "admin": {
+    "title": "Tableau de bord admin",
+    "addCountry": "Ajouter un pays",
+    "actions": "Actions"
+  },
+  "chat": {
+    "title": "Chat en direct",
+    "placeholder": "Écrire un message...",
+    "send": "Envoyer"
+  },
+  "errors": {
+    "notFound": "Non trouvé",
+    "forbidden": "Vous n'avez pas la permission",
+    "invalid": "Identifiants invalides"
+  }
+}

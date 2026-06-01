@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title th:text="${country.name}">Country</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav th:replace="~{layout :: nav}"></nav>
+<main>
+<a th:href="@{/countries}">Back to list</a>
+
+<h1 th:text="${country.name}"></h1>
+<p>Capital: <strong th:text="${country.capital}"></strong></p>
+<p>Population: <strong th:text="${country.population}"></strong></p>
+<p>Continent: <strong th:text="${country.continent}"></strong></p>
+<p th:text="${country.description}"></p>
+
+<div sec:authorize="hasAnyRole('USER','ADMIN')">
+<!--  <form th:if="${visited != true}" th:action="@{/countries/{id}/visit(id=${country.id})}" method="post">-->
+<!--    <button type="submit" class="btn btn-success">Mark as visited</button>-->
+<!--  </form>-->
+    <form th:action="@{/countries/{id}/visit(id=${country.id})}" method="post">
+        <input type="hidden" name="countryName" th:value="${country.name}"/>
+        <button type="submit" class="btn btn-success">Mark as visited</button>
+    </form>
+  <p th:if="${visited == true}" style="color:green">You have visited this country!</p>
+</div>
+
+<div class="admin-actions" sec:authorize="hasRole('ADMIN')">
+  <a th:href="@{/admin/countries/{id}/edit(id=${country.id})}" class="btn btn-secondary btn-sm">Edit</a>
+  <form th:action="@{/admin/countries/{id}/delete(id=${country.id})}" method="post" style="display:inline">
+    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this country?')">Delete</button>
+  </form>
+</div>
+
+<h2>Fun Facts</h2>
+<ul>
+  <li th:each="fact : ${country.funFacts}">
+    <span th:text="${fact.content}"></span>
+    <em th:text="' — ' + ${fact.authorUsername}"></em>
+    <span sec:authorize="hasRole('ADMIN')">
+        <form th:action="@{/countries/{id}/fun-facts/delete/{factId}(id=${country.id},factId=${fact.id})}" method="post" style="display:inline">
+          <input type="hidden" name="countryId" th:value="${country.id}"/>
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        </form>
+      </span>
+  </li>
+</ul>
+<p th:if="${#lists.isEmpty(country.funFacts)}">No fun facts yet.</p>
+
+<div sec:authorize="hasAnyRole('USER','ADMIN')">
+  <h3>Add a fun fact</h3>
+  <form th:action="@{/countries/{id}/fun-facts/add(id=${country.id})}" method="post">
+<!--    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+    <input type="hidden" name="countryId" th:value="${country.id}"/>
+    <textarea name="content" rows="3" cols="50" placeholder="Share something interesting..."></textarea><br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</main>
+</body>
+</html>

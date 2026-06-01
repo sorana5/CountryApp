@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Country Form</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav th:replace="~{layout :: nav}"></nav>
+<main>
+<h1 th:text="${country.id == null ? 'Add Country' : 'Edit Country'}">Form</h1>
+<a th:href="@{/admin}">Back to dashboard</a>
+
+<form th:action="${country.id == null ? '/admin/countries/new' : '/admin/countries/' + country.id + '/edit'}"
+      th:object="${country}" method="post">
+
+  <label>Name: <input type="text" th:field="*{name}" required/></label><br/>
+  <label>Capital: <input type="text" th:field="*{capital}"/></label><br/>
+  <label>Population: <input type="number" th:field="*{population}"/></label><br/>
+  <label>Continent: <input type="text" th:field="*{continent}"/></label><br/>
+  <label>Description:<br/>
+    <textarea th:field="*{description}" rows="4" cols="50"></textarea>
+  </label><br/>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</main>
+</body>
+</html>

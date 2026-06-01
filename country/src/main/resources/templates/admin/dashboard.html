@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<nav th:replace="~{layout :: nav}"></nav>
+
+<main>
+  <div class="page-header">
+    <h1>Admin Dashboard</h1>
+    <a th:href="@{/admin/countries/new}" class="btn btn-primary">+ Add new country</a>
+  </div>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Continent</th>
+      <th>Population</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="country : ${countries}">
+      <td>
+        <a th:href="@{/countries/{id}(id=${country.id})}" th:text="${country.name}"></a>
+      </td>
+      <td th:text="${country.capital}"></td>
+      <td th:text="${country.continent}"></td>
+      <td th:text="${country.population}"></td>
+      <td>
+        <div class="action-buttons">
+          <a th:href="@{/admin/countries/{id}/edit(id=${country.id})}" class="btn btn-secondary btn-sm">Edit</a>
+          <form th:action="@{/admin/countries/{id}/delete(id=${country.id})}" method="post">
+            <button type="submit" class="btn btn-danger btn-sm"
+                    onclick="return confirm('Delete this country?')">Delete</button>
+          </form>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+
+</body>
+</html>

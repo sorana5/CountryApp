@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<nav th:fragment="nav">
+    <div class="nav-left">
+        <span class="nav-brand">CountryApp</span>
+        <span class="nav-divider">|</span>
+        <a th:href="@{/countries}">Countries</a>
+        <span sec:authorize="hasRole('ADMIN')">
+      <a th:href="@{/admin}">Admin</a>
+    </span>
+    </div>
+
+    <div class="nav-right">
+    <span sec:authorize="isAuthenticated()">
+        <span style="color:#c7d2fe; font-size:14px;">
+        Welcome, <strong sec:authentication="name"></strong>!
+      </span>
+      <a th:href="@{/profile}">My Profile</a>
+      <form th:action="@{/logout}" method="post" style="display:inline">
+        <button type="submit">Logout</button>
+      </form>
+    </span>
+        <span sec:authorize="!isAuthenticated()">
+      <a th:href="@{/login}">Login</a>
+      <a th:href="@{/register}">Register</a>
+    </span>
+    </div>
+</nav>
+
+<footer th:fragment="footer">
+    <p>CountryApp &copy; 2026</p>
+</footer>
+
+</body>
+</html>

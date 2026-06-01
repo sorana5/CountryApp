@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "countries": "Țări",
+    "profile": "Profil",
+    "admin": "Admin",
+    "login": "Autentificare",
+    "register": "Înregistrare",
+    "logout": "Deconectare",
+    "chat": "Chat"
+  },
+  "countries": {
+    "title": "Țări",
+    "search": "Caută după nume",
+    "filter": "Filtrează după continent",
+    "searchBtn": "Caută",
+    "clear": "Șterge",
+    "name": "Nume",
+    "continent": "Continent",
+    "capital": "Capitală",
+    "population": "Populație",
+    "export": "Exportă",
+    "previous": "Anterior",
+    "next": "Următor"
+  },
+  "country": {
+    "capital": "Capitală",
+    "population": "Populație",
+    "continent": "Continent",
+    "funFacts": "Fapte interesante",
+    "noFunFacts": "Nu există fapte interesante.",
+    "addFunFact": "Adaugă un fapt interesant",
+    "submit": "Trimite",
+    "markVisited": "Marchează ca vizitată",
+    "visited": "Ai vizitat această țară!",
+    "edit": "Editează",
+    "delete": "Șterge",
+    "back": "Înapoi la listă"
+  },
+  "auth": {
+    "username": "Nume utilizator",
+    "email": "Email",
+    "password": "Parolă",
+    "login": "Autentificare",
+    "register": "Înregistrare",
+    "noAccount": "Nu ai cont?",
+    "haveAccount": "Ai deja cont?"
+  },
+  "profile": {
+    "title": "Profilul meu",
+    "visitedTitle": "Țările vizitate",
+    "noVisited": "Nu ai vizitat nicio țară încă."
+  },
+  "admin": {
+    "title": "Panou administrator",
+    "addCountry": "Adaugă țară nouă",
+    "actions": "Acțiuni"
+  },
+  "chat": {
+    "title": "Chat live",
+    "placeholder": "Scrie un mesaj...",
+    "send": "Trimite"
+  },
+  "errors": {
+    "notFound": "Nu a fost găsit",
+    "forbidden": "Nu ai permisiunea necesară",
+    "invalid": "Date de autentificare invalide"
+  }
+}

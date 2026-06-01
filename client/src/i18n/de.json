@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "countries": "Länder",
+    "profile": "Profil",
+    "admin": "Admin",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "chat": "Chat"
+  },
+  "countries": {
+    "title": "Länder",
+    "search": "Nach Name suchen",
+    "filter": "Nach Kontinent filtern",
+    "searchBtn": "Suchen",
+    "clear": "Löschen",
+    "name": "Name",
+    "continent": "Kontinent",
+    "capital": "Hauptstadt",
+    "population": "Bevölkerung",
+    "export": "Exportieren",
+    "previous": "Zurück",
+    "next": "Weiter"
+  },
+  "country": {
+    "capital": "Hauptstadt",
+    "population": "Bevölkerung",
+    "continent": "Kontinent",
+    "funFacts": "Wissenswertes",
+    "noFunFacts": "Noch keine Fakten vorhanden.",
+    "addFunFact": "Einen Fakt hinzufügen",
+    "submit": "Absenden",
+    "markVisited": "Als besucht markieren",
+    "visited": "Du hast dieses Land besucht!",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "back": "Zurück zur Liste"
+  },
+  "auth": {
+    "username": "Benutzername",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "noAccount": "Noch kein Konto?",
+    "haveAccount": "Bereits ein Konto?"
+  },
+  "profile": {
+    "title": "Mein Profil",
+    "visitedTitle": "Besuchte Länder",
+    "noVisited": "Du hast noch keine Länder besucht."
+  },
+  "admin": {
+    "title": "Admin-Dashboard",
+    "addCountry": "Neues Land hinzufügen",
+    "actions": "Aktionen"
+  },
+  "chat": {
+    "title": "Live-Chat",
+    "placeholder": "Nachricht eingeben...",
+    "send": "Senden"
+  },
+  "errors": {
+    "notFound": "Nicht gefunden",
+    "forbidden": "Keine Berechtigung",
+    "invalid": "Ungültige Anmeldedaten"
+  }
+}

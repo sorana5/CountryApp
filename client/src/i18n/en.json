@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "Home",
+    "countries": "Countries",
+    "profile": "Profile",
+    "admin": "Admin",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "chat": "Chat"
+  },
+  "countries": {
+    "title": "Countries",
+    "search": "Search by name",
+    "filter": "Filter by continent",
+    "searchBtn": "Search",
+    "clear": "Clear",
+    "name": "Name",
+    "continent": "Continent",
+    "capital": "Capital",
+    "population": "Population",
+    "export": "Export",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "country": {
+    "capital": "Capital",
+    "population": "Population",
+    "continent": "Continent",
+    "funFacts": "Fun Facts",
+    "noFunFacts": "No fun facts yet.",
+    "addFunFact": "Add a fun fact",
+    "submit": "Submit",
+    "markVisited": "Mark as visited",
+    "visited": "You have visited this country!",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back to list"
+  },
+  "auth": {
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "register": "Register",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "profile": {
+    "title": "My Profile",
+    "visitedTitle": "Countries I've visited",
+    "noVisited": "You haven't visited any countries yet."
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "addCountry": "Add new country",
+    "actions": "Actions"
+  },
+  "chat": {
+    "title": "Live Chat",
+    "placeholder": "Type a message...",
+    "send": "Send"
+  },
+  "errors": {
+    "notFound": "Not found",
+    "forbidden": "You don't have permission",
+    "invalid": "Invalid credentials"
+  }
+}

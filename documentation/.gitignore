@@ -1,0 +1,6 @@
+# ignore everything
+*
+
+# except the final PDF
+!project_documentation.pdf
+!.gitignore

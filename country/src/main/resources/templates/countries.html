@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Countries</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav th:replace="~{layout :: nav}"></nav>
+<main>
+<h1>Countries</h1>
+
+<form method="get" th:action="@{/countries}">
+    <input type="text" name="name" placeholder="Search by name" th:value="${name}"/>
+    <input type="text" name="continent" placeholder="Filter by continent" th:value="${continent}"/>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a th:href="@{/countries}" class="btn btn-secondary">Clear</a>
+</form>
+
+    <div style="display:flex; gap:10px; margin-bottom:10px; margin-top:10px">
+        <a th:href="@{/countries/export(format='json',name=${name},continent=${continent},sort=${sort},dir=${dir})}"
+           class="btn btn-secondary btn-sm">Export JSON</a>
+        <a th:href="@{/countries/export(format='xml',name=${name},continent=${continent},sort=${sort},dir=${dir})}"
+           class="btn btn-primary btn-sm">Export XML</a>
+        <a th:href="@{/countries/export(format='csv',name=${name},continent=${continent},sort=${sort},dir=${dir})}"
+           class="btn btn-secondary btn-sm">Export CSV</a>
+    </div>
+
+<table border="1">
+    <tr>
+        <th>
+            <a th:href="@{/countries(name=${name},continent=${continent},sort='name',dir=${sort == 'name' ? reverseDir : 'asc'})}">
+                Name
+            </a>
+        </th>
+        <th>
+            <a th:href="@{/countries(name=${name},continent=${continent},sort='continent',dir=${sort == 'continent' ? reverseDir : 'asc'})}">
+                Continent
+            </a>
+        </th>
+        <th>Capital</th>
+        <th>Population</th>
+    </tr>
+    <tr th:each="country : ${countries}">
+        <td><a th:href="@{/countries/{id}(id=${country.id})}" th:text="${country.name}"></a></td>
+        <td th:text="${country.continent}"></td>
+        <td th:text="${country.capital}"></td>
+        <td th:text="${country.population}"></td>
+    </tr>
+</table>
+
+<div class="pagination">
+  <span th:if="${currentPage > 0}">
+    <a th:href="@{/countries(name=${name},continent=${continent},sort=${sort},dir=${dir},page=${currentPage - 1})}">Previous</a>
+  </span>
+    <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+    <a th:href="@{/countries(name=${name},continent=${continent},sort=${sort},dir=${dir},page=${i})}"
+       th:text="${i + 1}"
+       th:style="${i == currentPage} ? 'font-weight:bold' : ''"></a>
+  </span>
+    <span th:if="${currentPage < totalPages - 1}">
+    <a th:href="@{/countries(name=${name},continent=${continent},sort=${sort},dir=${dir},page=${currentPage + 1})}">Next</a>
+  </span>
+</div>
+</main>
+<footer th:replace="~{layout :: footer}"></footer>
+</body>
+</html>
